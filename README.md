@@ -1,3 +1,5 @@
+#This is not my code, it is open source from https://github.com/netson/ubuntu-unattended
+
 # Unattended Ubuntu ISO Maker
 
 This simple script will create an unattended Ubuntu ISO from start to finish. It will ask you a few questions once, and embed your answers into a remastered ISO file for you to use over and over again.
