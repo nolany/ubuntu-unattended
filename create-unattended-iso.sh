@@ -53,7 +53,7 @@ echo " +---------------------------------------------------+"
 echo
 
 # ask if script runs without sudo or root priveleges
-if [ $currentuser != "root" ]; then
+if [ $currentuser = "root" ]; then
     echo " you run this without sudo privileges or not as root"
     exit 1
 fi
@@ -106,7 +106,7 @@ done
 
 if [ -f /etc/timezone ]; then
   timezone=`cat /etc/timezone`
-elif [ -h /etc/localtime]; then
+elif [ -h /etc/localtime ]; then
   timezone=`readlink /etc/localtime | sed "s/\/usr\/share\/zoneinfo\///"`
 else
   checksum=`md5sum /etc/localtime | cut -d' ' -f1`
@@ -252,8 +252,8 @@ fi
 
 # cleanup
 umount $tmp/iso_org
-rm -rf $tmp/iso_new
-rm -rf $tmp/iso_org
+#rm -rf $tmp/iso_new
+#rm -rf $tmp/iso_org
 rm -rf $tmphtml
 
 
