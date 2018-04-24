@@ -183,7 +183,7 @@ mkdir -p $tmp/iso_new
 if grep -qs $tmp/iso_org /proc/mounts ; then
     echo " image is already mounted, continue"
 else
-    (mount -o loop $tmp/$download_file $tmp/iso_org > /dev/null 2>&1)
+    (sudo mount -o loop $tmp/$download_file $tmp/iso_org > /dev/null 2>&1)
 fi
 
 # copy the iso contents to the working directory
